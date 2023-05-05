@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar película</title>
+</head>
+<body>
+   <form method="post" action="#" th:action="@{/insertarPelicula}">
+        
+       
+
+        <label for="director">Director:</label>
+        <select id="director" name="director">
+            <option th:each="dir : ${directors}" th:text="${dir.name}" th:value="${director}" ></option>
+        </select>
+
+        <button type="submit">Enviar</button>
+    </form> 
+
+    
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="peliculaDetalle" th:if="${peliculaSeleccionada != null}">      
+        <p> Título: <h3 th:text="${peliculaSeleccionada.title}">Título</h3></p>
+        <p th:text="|Año: ${peliculaSeleccionada.year}|"></p>
+        <p> Duración: <h3 th:text="${peliculaSeleccionada.runtime} +' min'"> duracion</h3></p>     
+        <p> ID Película: <h3 th:text="${peliculaSeleccionada.id}|">ID</h3></p> 
+        <p> Título: <h3 th:text="${peliculaSeleccionada.title}">Título</h3></p>
+        <p th:text="|Año: ${peliculaSeleccionada.year}|"></p>
+        <p> Duración: <h3 th:text="${peliculaSeleccionada.runtime} +' min'"> duracion</h3></p>
+        <p> Director: <h3 th:text="${peliculaSeleccionada.director_id.name}">Director</h3></p>
+
+        <ul>
+            <li th:each="actor : ${peliculaSeleccionada.actorsList}" th:text="${actor.name}"></li>
+         </ul>
+               
+        
+    </div>
+    
+
+    
+</body>
+</html>

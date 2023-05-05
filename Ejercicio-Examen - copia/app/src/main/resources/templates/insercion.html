@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form th:action="@{/movies/guardar}" th:object="${movie}" method="post">
+        <input type="text" th:field="${movie.title}" placeholder="Titulo de la pelicula">
+        <input type="text" th:field="${movie.year}" placeholder="Año de la pelicula: ">
+        <input type="text" th:field="${movie.Runtime}" placeholder="Duración de la pelicula: ">
+        <label for="director">Director:</label>
+        <!-- <select  id="director" name="selectedOption">
+            <option th:each="dir : ${directors}" th:text="${dir.name}" th:value="${movie.director}" ></option>
+        </select> -->
+        <button type="submit">Enviar</button>
+    </form>
+      
+</body>
+</html>
